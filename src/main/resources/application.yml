@@ -1,0 +1,18 @@
+server:
+   port: 8080
+spring:
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      password: admin
+      url: jdbc:mysql://127.0.0.1:3306/magneto?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: root
+api:
+   database:
+      sp:
+        consult: CALL magneto.sp_select_dna_testing_record()
+        insert: CALL magneto.sp_insert_dna_testing_record(:dna,:isMutan)
+   constants:
+        dnaLetters: ATCG
+        isHuman: ¡Es humano!.
+        validate: El ADN ingresado no cumple con las validaciones pertinentes.
+        errorExceptionService: Error al consumir el servicio api. Por favor comunicarse con el administrador.
