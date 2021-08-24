@@ -13,8 +13,7 @@ import com.mercadolibre.test.magneto.dto.RequestDTO;
 import com.mercadolibre.test.magneto.dto.ResponseDTO;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping({"/magneto"})
+@CrossOrigin
 public class ApiController {
 
     @Autowired

@@ -6,24 +6,32 @@ public class ProcessChain {
      * Metodo que verifica que la secuencia del ADN sea la correcta
      *
      * @param str - Array de String con el ADN
-     * @param validate - campo que trae las letras que se pueden usar para la
+     * @param dnaLetters - campo que trae las letras que se pueden usar para la
      * validacion de cada base nitrogenada del ADN
+     * @param dnaSize - tamaño maximo permitido para leer una secuencia de ADN
      * @return Verdadero si cumple con la validacion, false si no
      */
-    public static boolean validate(String[] str, String validate) {
-        for (String s : str) {
-            char[] charArray = s.toCharArray();
-            if (charArray.length > 0 && charArray.length == str[0].toCharArray().length) {
-                for (char c : charArray) {
-                    if (!validate.contains(String.valueOf(c))) {
-                        return false;
+    public static boolean validate(String[] str, String dnaLetters, int dnaSize) {
+        boolean sw = true;
+        if (str != null && str.length != 0 && str.length <= dnaSize) {
+            for (String s : str) {
+                char[] charArray = s.toCharArray();
+                if (charArray.length <= dnaSize) {
+                    for (char c : charArray) {
+                        if (!dnaLetters.contains(String.valueOf(c))) {
+                            sw = false;
+                            break;
+                        }
                     }
+                } else {
+                    sw = false;
+                    break;
                 }
-            } else {
-                return false;
             }
+        } else {
+            sw = false;
         }
-        return true;
+        return sw;
     }
 
     /**

@@ -1,0 +1,362 @@
+2021-08-22 16:21:49,457 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:21:49,484 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:21:49,485 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:21:49,660 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:21:50,732 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:22:13,619 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:22:13,674 INFO [ControllerBusiness.stats.65] Start...
+2021-08-22 16:22:13,713 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 16:22:15,770 ERROR [HikariPool.throwPoolInitializationException.574] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'portalmedicamentos'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:694)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:748)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.query(NamedParameterJdbcTemplate.java:216)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.query(NamedParameterJdbcTemplate.java:228)
+	at com.mercadolibre.test.magneto.daos.AdnDAO.get(AdnDAO.java:33)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$FastClassBySpringCGLIB$$266a7afb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$EnhancerBySpringCGLIB$$675c4b.get(<generated>)
+	at com.mercadolibre.test.magneto.business.ControllerBusiness.stats(ControllerBusiness.java:70)
+	at com.mercadolibre.test.magneto.controllers.ApiController.stats(ApiController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+2021-08-22 16:22:15,789 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 16:22:17,273 ERROR [HikariPool.throwPoolInitializationException.574] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'portalmedicamentos'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at com.mercadolibre.test.magneto.utils.ConnectionManager.closeJdbc(ConnectionManager.java:13)
+	at com.mercadolibre.test.magneto.daos.AdnDAO.get(AdnDAO.java:35)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$FastClassBySpringCGLIB$$266a7afb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$EnhancerBySpringCGLIB$$675c4b.get(<generated>)
+	at com.mercadolibre.test.magneto.business.ControllerBusiness.stats(ControllerBusiness.java:70)
+	at com.mercadolibre.test.magneto.controllers.ApiController.stats(ApiController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+2021-08-22 16:22:17,276 ERROR [ControllerBusiness.stats.72] Error al consumir el servicio api. Por favor comunicarse con el administrador. - Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'portalmedicamentos'
+2021-08-22 16:22:17,277 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=null)
+2021-08-22 16:22:17,278 INFO [ControllerBusiness.stats.76] End...
+2021-08-22 16:23:16,356 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:23:16,395 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:23:16,396 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:23:16,657 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:23:17,634 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:23:22,929 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:23:22,982 INFO [ControllerBusiness.stats.65] Start...
+2021-08-22 16:23:23,030 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 16:23:24,971 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-22 16:23:25,226 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=0, countHumanDna=0, ratio=0))
+2021-08-22 16:23:25,227 INFO [ControllerBusiness.stats.76] End...
+2021-08-22 16:27:42,819 INFO [ControllerBusiness.stats.65] Start...
+2021-08-22 16:27:43,011 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=0, countHumanDna=0, ratio=0))
+2021-08-22 16:27:43,013 INFO [ControllerBusiness.stats.76] End...
+2021-08-22 16:27:56,652 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:27:56,654 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 16:27:56,656 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:27:56,657 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:28:22,373 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:28:22,373 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[])
+2021-08-22 16:28:22,564 INFO [ControllerBusiness.mutant.46] ¡Es humano no mutante!.
+2021-08-22 16:28:22,564 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:28:50,562 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:28:50,563 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=null)
+2021-08-22 16:28:50,564 ERROR [ControllerBusiness.mutant.52] Error al consumir el servicio api. Por favor comunicarse con el administrador. - null
+2021-08-22 16:28:50,565 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:46:33,800 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:46:33,830 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:46:33,831 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:46:34,004 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:46:35,004 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:47:08,424 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:47:08,468 INFO [ControllerBusiness.stats.65] Start...
+2021-08-22 16:47:08,494 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 16:47:10,362 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-22 16:47:10,572 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=0, countHumanDna=1, ratio=0.0))
+2021-08-22 16:47:10,573 INFO [ControllerBusiness.stats.76] End...
+2021-08-22 16:47:23,440 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:47:23,442 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=null)
+2021-08-22 16:47:23,445 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:47:23,447 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:47:33,538 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:47:33,538 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=null)
+2021-08-22 16:47:33,539 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:47:33,539 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:47:40,411 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:47:40,412 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[])
+2021-08-22 16:47:40,413 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:47:40,413 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:47:53,172 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:47:53,173 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 16:47:53,173 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:47:53,174 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:48:33,047 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:48:33,047 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, NAGTGC])
+2021-08-22 16:48:33,049 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:48:33,049 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:48:47,832 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:48:47,833 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGAN, CAGTGC])
+2021-08-22 16:48:47,833 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:48:47,833 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:48:55,523 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:48:55,524 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGCN])
+2021-08-22 16:48:55,524 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:48:55,524 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:49:02,097 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:49:02,098 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGC])
+2021-08-22 16:49:02,099 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:49:02,099 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:49:18,535 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:49:18,536 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGC])
+2021-08-22 16:49:18,536 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:49:18,536 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:49:52,660 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:49:52,661 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGC, CAGTGC])
+2021-08-22 16:49:52,662 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:49:52,662 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:50:37,937 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:50:37,963 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:50:37,964 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:50:38,118 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:50:39,188 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:51:07,371 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:51:07,557 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:51:07,558 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGC])
+2021-08-22 16:52:03,596 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:52:03,597 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:53:03,646 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:53:03,673 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:53:03,674 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:53:03,842 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:53:04,744 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:53:11,102 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:53:11,275 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:53:11,276 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=null)
+2021-08-22 16:53:17,451 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:53:17,452 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:53:31,206 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:53:31,207 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=null)
+2021-08-22 16:53:35,427 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:53:35,430 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:53:45,344 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:53:45,345 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[])
+2021-08-22 16:54:11,367 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 16:54:13,906 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-22 16:54:14,065 INFO [ControllerBusiness.mutant.46] Es humano no mutante.
+2021-08-22 16:54:14,067 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:54:52,101 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:54:52,126 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:54:52,127 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:54:52,277 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:54:53,157 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:54:56,008 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:54:56,179 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:54:56,197 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[])
+2021-08-22 16:54:56,200 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:54:56,201 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:55:30,380 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:55:30,411 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 16:55:30,412 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 16:55:30,595 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 16:55:31,542 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 16:55:32,437 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 16:55:32,602 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:55:32,603 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[])
+2021-08-22 16:55:38,859 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:55:38,860 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:55:58,202 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:55:58,203 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGAA, CAGTGC])
+2021-08-22 16:56:11,699 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:56:11,700 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:57:05,153 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:57:05,154 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGCA])
+2021-08-22 16:57:26,465 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:57:26,468 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:58:01,690 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:58:01,691 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGC, CAGTGC])
+2021-08-22 16:58:15,227 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 16:58:15,229 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 16:58:22,328 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 16:58:22,330 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[CTGCGA, CAGTGC])
+2021-08-22 16:58:24,660 ERROR [ControllerBusiness.mutant.52] Error al consumir el servicio api. Por favor comunicarse con el administrador. - 2
+2021-08-22 16:58:24,661 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:00:48,249 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-5000"]
+2021-08-22 17:00:48,275 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-22 17:00:48,276 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-22 17:00:48,432 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-22 17:00:49,217 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-5000"]
+2021-08-22 17:01:18,069 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 17:01:18,252 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 17:01:18,255 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGAA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 17:01:18,259 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 17:01:18,259 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:01:24,306 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 17:01:24,307 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, ACAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 17:01:24,308 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 17:01:24,309 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:01:46,688 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 17:01:46,689 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, ACAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 17:01:46,689 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 17:01:46,690 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:01:51,132 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 17:01:51,132 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 17:01:51,133 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-22 17:01:51,134 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:02:11,259 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-22 17:02:11,260 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[ATGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-22 17:02:11,288 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-22 17:02:13,205 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-22 17:02:13,335 INFO [ControllerBusiness.mutant.55] End...
+2021-08-22 17:02:31,596 INFO [ControllerBusiness.stats.65] Start...
+2021-08-22 17:02:31,873 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=1, countHumanDna=2, ratio=0.5))
+2021-08-22 17:02:31,874 INFO [ControllerBusiness.stats.76] End...
+2021-08-22 17:33:05,101 WARN [HikariPool.run.766] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m51s434ms523µs900ns).
+2021-08-22 21:44:34,965 WARN [HikariPool.run.766] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h28s632ms966µs900ns).

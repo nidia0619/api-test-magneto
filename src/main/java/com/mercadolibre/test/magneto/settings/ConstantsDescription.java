@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class ConstantsDescription {
 
     private String dnaLetters;
-    private String isHuman;
+    private int dnaSize;
+    private String notMutant;
     private String validate;
     private String errorExceptionService;
 

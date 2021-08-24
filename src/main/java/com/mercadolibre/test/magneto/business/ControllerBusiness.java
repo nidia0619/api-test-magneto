@@ -37,13 +37,13 @@ public class ControllerBusiness {
         log.info("Request: " + req);
         HttpStatus httpStatus = HttpStatus.FORBIDDEN;
         try {
-            if (ProcessChain.validate(req.getDna(), constantsDescription.getDnaLetters())) {
+            if (ProcessChain.validate(req.getDna(), constantsDescription.getDnaLetters(), constantsDescription.getDnaSize())) {
                 boolean isMutan = ProcessChain.isMutant(ProcessChain.convertArray(req.getDna()));
                 adnDAO.insert(Arrays.toString(req.getDna()), isMutan);
                 if (isMutan) {
                     httpStatus = HttpStatus.OK;
                 } else {
-                    log.info(constantsDescription.getIsHuman());
+                    log.info(constantsDescription.getNotMutant());
                 }
             } else {
                 log.info(constantsDescription.getValidate());

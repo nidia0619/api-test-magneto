@@ -1,0 +1,363 @@
+2021-08-20 16:59:38,649 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-08-20 16:59:38,698 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 16:59:38,699 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 16:59:39,026 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 16:59:40,284 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-8080"]
+2021-08-20 17:00:04,307 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 17:00:04,383 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:00:04,471 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 17:00:07,635 ERROR [HikariPool.throwPoolInitializationException.574] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'springroot'@'179.15.162.182' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:612)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:694)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:748)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.query(NamedParameterJdbcTemplate.java:216)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.query(NamedParameterJdbcTemplate.java:228)
+	at com.mercadolibre.test.magneto.daos.AdnDAO.get(AdnDAO.java:33)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$FastClassBySpringCGLIB$$266a7afb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$EnhancerBySpringCGLIB$$6cbc9ef9.get(<generated>)
+	at com.mercadolibre.test.magneto.business.ControllerBusiness.stats(ControllerBusiness.java:70)
+	at com.mercadolibre.test.magneto.controllers.ApiController.stats(ApiController.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+2021-08-20 17:00:07,645 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 17:00:09,229 ERROR [HikariPool.throwPoolInitializationException.574] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'springroot'@'179.15.162.182' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at com.mercadolibre.test.magneto.utils.ConnectionManager.closeJdbc(ConnectionManager.java:13)
+	at com.mercadolibre.test.magneto.daos.AdnDAO.get(AdnDAO.java:35)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$FastClassBySpringCGLIB$$266a7afb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.mercadolibre.test.magneto.daos.AdnDAO$$EnhancerBySpringCGLIB$$6cbc9ef9.get(<generated>)
+	at com.mercadolibre.test.magneto.business.ControllerBusiness.stats(ControllerBusiness.java:70)
+	at com.mercadolibre.test.magneto.controllers.ApiController.stats(ApiController.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+2021-08-20 17:00:09,233 ERROR [ControllerBusiness.stats.72] Error al consumir el servicio api. Por favor comunicarse con el administrador. - Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'springroot'@'179.15.162.182' (using password: YES)
+2021-08-20 17:00:09,235 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=null)
+2021-08-20 17:00:09,237 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:00:51,642 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-08-20 17:00:51,670 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 17:00:51,671 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 17:00:51,828 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 17:00:52,682 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-8080"]
+2021-08-20 17:01:09,880 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 17:01:09,927 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:01:09,960 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 17:01:11,746 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 17:01:11,981 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=0, countHumanDna=0, ratio=0))
+2021-08-20 17:01:11,981 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:01:57,536 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:01:57,539 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[ATGCGA, CAGTGC, TTATGT, AGAAGG, CCCCTA, TCACTG])
+2021-08-20 17:01:57,769 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:02:02,184 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:02:02,395 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=1, countHumanDna=0, ratio=0))
+2021-08-20 17:02:02,396 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:02:54,931 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:02:54,932 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[ATGCGA, CAGTGC, TTATGT, AGAAGG, CCCATA, TCACTG])
+2021-08-20 17:02:55,151 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:02:57,603 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:02:57,797 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=2, countHumanDna=0, ratio=0))
+2021-08-20 17:02:57,798 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:03:14,414 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:03:14,414 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[ATGCGA, CAGTGC, TTATGT, AGGAGG, CCCATA, TCACTG])
+2021-08-20 17:03:14,624 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:03:22,176 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:03:22,380 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=3, countHumanDna=0, ratio=0))
+2021-08-20 17:03:22,382 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:03:40,963 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:03:40,964 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[ATGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-20 17:03:41,196 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:03:45,172 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:03:45,376 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=0, ratio=0))
+2021-08-20 17:03:45,377 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:04:09,496 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-08-20 17:04:09,565 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 17:04:09,567 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 17:04:10,053 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 17:04:11,683 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-8080"]
+2021-08-20 17:05:05,446 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 17:05:05,633 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:05:05,635 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[TTGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-20 17:05:11,743 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 17:05:13,765 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 17:05:13,966 INFO [ControllerBusiness.mutant.46] ¡Es humano!.
+2021-08-20 17:05:13,972 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:05:20,471 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:05:20,754 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 17:05:20,755 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 17:05:49,142 INFO [ControllerBusiness.mutant.36] Start...
+2021-08-20 17:05:49,143 INFO [ControllerBusiness.mutant.37] Request: RequestDTO(dna=[RTGCGA, CAGTGC, TTATGT, AGGAGG, CCTATA, TCACTG])
+2021-08-20 17:05:49,146 INFO [ControllerBusiness.mutant.49] El ADN ingresado no cumple con las validaciones pertinentes.
+2021-08-20 17:05:49,147 INFO [ControllerBusiness.mutant.55] End...
+2021-08-20 17:05:52,278 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 17:05:52,484 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 17:05:52,485 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 18:22:02,002 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-08-20 18:22:02,044 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 18:22:02,045 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 18:22:02,343 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 18:22:03,575 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-8080"]
+2021-08-20 18:24:05,108 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 18:24:05,169 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 18:24:05,213 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 18:24:07,078 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 18:24:07,340 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 18:24:07,341 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 18:48:21,145 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 18:48:21,182 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 18:48:21,184 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 18:48:21,401 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 18:48:22,635 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 18:49:10,279 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 18:49:10,322 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 18:49:10,354 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 18:49:12,153 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 18:49:12,372 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 18:49:12,373 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 19:01:43,150 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:01:43,176 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 19:01:43,177 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 19:01:43,418 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 19:01:44,584 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:01:44,615 ERROR [LifecycleBase.log.175] Failed to start component [Connector[HTTP/1.1-9090]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1067)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.mercadolibre.test.magneto.ApiApplication.main(ApiApplication.java:14)
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:433)
+	at java.base/sun.nio.ch.Net.bind(Net.java:425)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:228)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:211)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1227)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:592)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1064)
+	... 14 common frames omitted
+2021-08-20 19:01:44,624 INFO [Http11NioProtocol.log.173] Pausing ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:01:44,625 INFO [StandardService.log.173] Stopping service [Tomcat]
+2021-08-20 19:01:44,638 INFO [LifecycleBase.log.173] The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2021-08-20 19:01:44,639 INFO [Http11NioProtocol.log.173] Stopping ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:01:44,640 INFO [Http11NioProtocol.log.173] Destroying ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:05:43,261 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:05:43,309 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 19:05:43,310 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 19:05:43,487 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 19:05:44,373 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 19:05:45,874 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 19:05:45,916 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 19:05:45,947 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 19:05:47,761 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 19:05:48,005 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 19:05:48,006 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 19:05:51,293 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 19:05:51,510 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 19:05:51,513 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 19:19:10,394 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 19:19:10,604 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 19:19:10,607 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 19:19:23,371 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 19:19:23,575 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 19:19:23,578 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 21:16:01,099 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:16:01,140 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 21:16:01,142 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 21:16:01,365 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 21:16:02,626 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:16:13,232 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 21:25:09,184 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:25:09,209 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 21:25:09,211 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 21:25:09,382 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 21:25:10,297 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:25:41,187 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 21:25:47,642 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 21:25:47,683 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 21:25:49,422 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 21:25:49,639 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 21:25:49,640 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 21:33:33,183 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 21:33:33,406 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 21:33:33,407 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 21:33:36,445 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 21:33:36,652 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=1, ratio=4.0))
+2021-08-20 21:33:36,656 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 21:34:07,559 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 21:34:07,777 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=5, ratio=0.8))
+2021-08-20 21:34:07,780 INFO [ControllerBusiness.stats.76] End...
+2021-08-20 21:44:50,228 INFO [Http11NioProtocol.log.173] Initializing ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:44:50,308 INFO [StandardService.log.173] Starting service [Tomcat]
+2021-08-20 21:44:50,312 INFO [StandardEngine.log.173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-08-20 21:44:50,585 INFO [[/].log.173] Initializing Spring embedded WebApplicationContext
+2021-08-20 21:44:52,120 INFO [Http11NioProtocol.log.173] Starting ProtocolHandler ["http-nio-9090"]
+2021-08-20 21:45:02,363 INFO [[/].log.173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-20 21:45:02,417 INFO [ControllerBusiness.stats.65] Start...
+2021-08-20 21:45:02,457 INFO [HikariDataSource.getConnection.110] HikariPool-1 - Starting...
+2021-08-20 21:45:04,221 INFO [HikariDataSource.getConnection.123] HikariPool-1 - Start completed.
+2021-08-20 21:45:04,474 INFO [ControllerBusiness.stats.75] Response: ResponseDTO(stats=Stats(countMutantDna=4, countHumanDna=5, ratio=0.8))
+2021-08-20 21:45:04,475 INFO [ControllerBusiness.stats.76] End...
