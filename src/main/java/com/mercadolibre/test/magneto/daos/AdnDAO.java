@@ -1,6 +1,6 @@
 package com.mercadolibre.test.magneto.daos;
 
-import com.mercadolibre.test.magneto.models.Stats;
+import com.mercadolibre.test.magneto.dto.ResponseDTO;
 import com.mercadolibre.test.magneto.settings.Database;
 import com.mercadolibre.test.magneto.utils.ConnectionManager;
 
@@ -26,11 +26,11 @@ public class AdnDAO {
      * @return Un objeto Stats con los datos de la estadistica
      * @throws Exception
      */
-    public Stats get() throws Exception {
+    public ResponseDTO get() throws Exception {
         try {
             StringBuilder sql = new StringBuilder();
             sql.append(database.getConsult());
-            return this.jdbcTemplate.query(sql.toString(), new BeanPropertyRowMapper<>(Stats.class)).get(0);
+            return this.jdbcTemplate.query(sql.toString(), new BeanPropertyRowMapper<>(ResponseDTO.class)).get(0);
         } finally {
             ConnectionManager.closeJdbc(jdbcTemplate);
         }

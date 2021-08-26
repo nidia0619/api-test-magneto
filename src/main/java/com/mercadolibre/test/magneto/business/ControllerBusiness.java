@@ -66,8 +66,7 @@ public class ControllerBusiness {
         HttpStatus httpStatus = HttpStatus.OK;
         ResponseDTO resp = null;
         try {
-            resp = new ResponseDTO();
-            resp.setStats(adnDAO.get());
+            resp = adnDAO.get();
         } catch (Exception e) {
             log.error(constantsDescription.getErrorExceptionService() + " - " + e.getMessage());
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
