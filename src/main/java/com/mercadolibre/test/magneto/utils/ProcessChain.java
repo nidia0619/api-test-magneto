@@ -62,6 +62,7 @@ public class ProcessChain {
      * @return Verdadero si es mutante, false si es humano
      */
     public static boolean isMutant(char[][] m) {
+        boolean isMutant = false;
         int sum = 0;
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length - 3; j++) {
@@ -81,8 +82,12 @@ public class ProcessChain {
                         sum++;
                     }
                 }
+                if(sum >= 2){
+                    isMutant = true;
+                    break;
+                }
             }
         }
-        return (sum >= 2);
+        return isMutant;
     }
 }
